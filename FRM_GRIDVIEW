@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace DataGridView_adv2
+{
+    public partial class FormINFO : Form
+    {
+        FRM_GRIDVIEW fgrid;
+        public FormINFO(FRM_GRIDVIEW fgrid)
+        {
+            InitializeComponent();
+            this.fgrid = fgrid;
+        }
+        //public void getResponse(string myMsg) {
+        //    string myMsg1 = myMsg;
+        //    MessageBox.Show(myMsg1);
+        //}
+        //public void getDataResponse(DataGridViewRow row,string sqli) {
+        //    row.Cells[0].Value = sqli;
+        //    row.Cells[1].Value = sqli;
+        //    row.Cells[2].Value = sqli;
+        //}
+        private void button1_Click(object sender, EventArgs e)
+        {
+            fgrid.dataGridView1.Rows.Add(textBox1.Text, textBox2.Text, textBox3.Text);
+            MessageBox.Show(fgrid.dataGridView1.Rows.Count.ToString());
+            //string myMsg = "hi";
+            //getResponse(myMsg);
+
+            //testing cell
+            //getDataResponse(fgrid.dataGridView1.Rows[0], "SQL Injection");
+            //getDataResponse(fgrid.dataGridView1.Rows[1], "SQL Injection");
+            //getDataResponse(fgrid.dataGridView1.Rows[2], "SQL Injection");
+
+        }
+    }
+}
